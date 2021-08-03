@@ -1,0 +1,22 @@
+
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+  <%= label_tag 'Title' %>
+  <%= text_field_tag 'title', @new_gossip.title %>
+  <br /> <br />
+
+  <%= label_tag 'Body' %>
+  <%= text_area_tag 'body', @new_gossip.content %>
+  <br /> <br />
+
+  <%= label_tag 'Author' %>
+  <%= text_field_tag 'author', @new_gossip.user.first_name %>
+  <br /> <br />
+
+  <%= submit_tag "Create Post" %>
+
+<% end %>
+
+
+

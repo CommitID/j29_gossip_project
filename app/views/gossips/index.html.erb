@@ -1,0 +1,21 @@
+<h1>Gossips#index</h1>
+
+<h2 style="font-weight: lighter"> Voici la liste des Gossips THP</h2>
+      </div>
+      <div class = "container-fluid bg-light text-dark p-3 mb-5 rounded">
+        <div class = "card-group w-100 "> 
+          <% if @all_gossips.length !=0 %>
+            <% @all_gossips.each do |gossip| %>
+              <div class="card text-center m-1 rounded" style="min-width: 200px; border: 1px solid rgba(0,0,0,.125)">
+                <div class="card-body">
+                  <h5 class="card-title">Gossip n°<%= link_to gossip["id"], "/gossips/#{gossip.id}"%></h5>
+                  <p class="card-text"><%= gossip.user.first_name %> a écrit quelque chose sur <%= gossip["title"] %></p>
+                  <a href="/gossips/<%= gossip["id"] %>" class="btn bg-dark text-light">Voir le potin</a>
+                </div>
+              </div> 
+            <% end %>
+          <%else%>
+              <p> Personne n'a balancé... Ose être le premier :wink: </p>
+          <% end %>
+        </div>
+      </div>
