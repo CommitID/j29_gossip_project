@@ -3,7 +3,7 @@ class Gossip < ApplicationRecord
   belongs_to :user
   validates :title, 
     presence: true, 
-    length: { minimum: 4},
-    length: { maximum: 14}
-  validates :content, presence: true  
+    length: { minimum: 4, message: "C'est bien trop court"},
+    length: { maximum: 14, message: "C'est bien trop long"}
+  validates :content, presence: true 
 end

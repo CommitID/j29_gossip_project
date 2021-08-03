@@ -12,7 +12,7 @@ class GossipsController < ApplicationController
   def new
     # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
     @new_user = User.new
-    @new_gossip = Gossip.new(user: @new_user)
+    @gossip = Gossip.new(user: @new_user)
     puts params
   end
 
@@ -24,12 +24,12 @@ class GossipsController < ApplicationController
     puts @gossip
     if @gossip.save # essaie de sauvegarder en base @gossip
       # si ça marche, il redirige vers la page d'index du site
-      flash[:notice] = "Gossip créé, bien ouej "
+      flash[:notice] = "Bien joué "
       redirect_to "/gossips/#{@gossip.id}"
     else
       # sinon, il render la view new (qui est celle sur laquelle on est déjà)
-      flash[:alert] = "User not found."
-      render "/gossips/new"
+      flash[:alert] = "T'es nul"
+      redirect_to "/gossips/new"
     end
   
   

@@ -27,8 +27,11 @@
             <a class="nav-link" href="http://localhost:3000/team">Team</a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="http://localhost:3000/contact">Contact</a>
-        </li>
+            <a class="nav-link" href="http://localhost:3000/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://localhost:3000/gossips/new">Nouveau Gossip !</a>
+          </li>
          
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -37,17 +40,23 @@
         </form>
       </div>
     </nav>
+    <% if flash[:notice] %>
+    <div class="alert alert-success" role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <%= yield %>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
   
   </header>
 
 
   <body>
-  #<% flash.each do |type, msg| %>
-   # <div>
-    #  <%= msg %>
-    #</div>
- # <% end %>
-    <%= yield %>
+
   </body>
 </html>
 
