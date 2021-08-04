@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/welcome/:name', to: 'welcome#print'
   get '/', to: 'gossips#index'
 
-  resources :gossips 
+  resources :gossips
 
 end
 
