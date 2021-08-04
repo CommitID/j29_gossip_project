@@ -10,5 +10,16 @@
     <p> <a href="<%= user_path(@gossip.user.id) %>" class="btn btn-primary">Afficher l'user</a>  </p>
     <p> <a href="<%= edit_gossip_path(@gossip.id) %>" class="btn btn-primary">Editer le gossip</a>  </p>
     <p> <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Sur ??" data-method="delete" >Supprimer</a>  </p>
-    </div>
+  </div>
+  <br /> <br />
+  <%= form_tag "gossip_comments_path",  method: "post" do %>
+
+    <%= label_tag 'Content' %>
+    <%= text_field_tag 'Content', @comment.content %>
+    <br /> <br />
+    <%= submit_tag "Create Comment" %>
+
+  <% end %>
+
+
 </body>
