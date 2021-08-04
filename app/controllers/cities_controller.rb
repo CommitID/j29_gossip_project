@@ -5,6 +5,9 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
+    @users = User.where(city_id: "#{params[:id]}")
+    puts @users
+  
   end
 
   def new

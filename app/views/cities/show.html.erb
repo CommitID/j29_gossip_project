@@ -1,1 +1,26 @@
-<h1>Tous les potins écrits à <%= @city.name %>
+<h1>Tous les potins écrits à <%= @city.name %> </h1>
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <td> Prénom </td>
+        <td> Titre du potin </td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user|%>
+      <tr>
+      <% if user.gossips.length !=0 %>
+        <td> <%= user.first_name %> </td>
+        <% user.gossips.each do |gossip| %>
+        <td> 
+         <a href="<%= gossip_path(gossip.id)%>" > <%= gossip.title %> </a>  
+        </td>
+      <%end%>
+      <%end%>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>

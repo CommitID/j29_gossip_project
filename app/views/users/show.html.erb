@@ -5,7 +5,10 @@
    <p> <%= @user.description %></p>
    <p> Son age : <%= @user.age %> </p>
    <p> Son mail : <%= @user.email %> </p>
-   <p> Sa ville : <%= @user.city.name %> </p>
+   <p> Sa ville : <a href="<%= city_path(@user.city.id)%>"><%= @user.city.name %> </a></p>
+
   </div>
 
 </body>
+
+

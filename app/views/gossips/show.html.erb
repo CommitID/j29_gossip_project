@@ -1,12 +1,14 @@
 
 
 <body>
+  
   <div>
     <h3><%= @gossip.title %></h3>
-    <p><%= User.find(@gossip.user_id).first_name %> de <%= User.find(@gossip.user_id).city.name %> nous dit :</p>
+    <p><%= User.find(@gossip.user_id).first_name %> de <a href="<%=city_path(@gossip.user.city_id)%>" > <%= User.find(@gossip.user_id).city.name %></a> nous dit :</p>
     <p><%= @gossip.content %><p>
     
     <p> <a href="<%= user_path(@gossip.user.id) %>" class="btn btn-primary">Afficher l'user</a>  </p>
-   
+    <p> <a href="<%= edit_gossip_path(@gossip.id) %>" class="btn btn-primary">Editer le gossip</a>  </p>
+    <p> <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Sur ??" data-method="delete" >Supprimer</a>  </p>
     </div>
 </body>
