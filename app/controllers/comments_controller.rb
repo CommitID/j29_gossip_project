@@ -22,8 +22,9 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.create(content: params[:content], user_id: 12, gossip_id: @gossip.id)
-
+    @comment = Comment.create(content: params[:Content], user_id: 12, gossip_id: @gossip_id )
+    puts @comment.content
+    #redirect_to "/gossips/#{params[:id]}"
   end
 
 
