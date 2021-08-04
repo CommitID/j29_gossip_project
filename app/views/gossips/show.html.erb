@@ -1,3 +1,11 @@
 
-<h3><%= @gossip.title %></h3>
-<p><%= @gossip.content %><p>
+
+<body>
+  <div>
+    <h3><%= @gossip.title %></h3>
+    <p><%= User.find(@gossip.user_id).first_name %> de <%= User.find(@gossip.user_id).city.name %> nous dit :</p>
+    <p><%= @gossip.content %><p>
+    
+    <p> <a href="<%= user_path(@gossip.user.id) %>" class="btn btn-primary">Afficher l'user</a>  </p>
+    </div>
+</body>

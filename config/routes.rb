@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/', to: 'gossips#index'
 
   resources :gossips
-
+  resources :users
 end
 
 
