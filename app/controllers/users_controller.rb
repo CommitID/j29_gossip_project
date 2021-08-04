@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to users_path(user.id)
+    redirect_to user_path(user.id)
   end
 
   def edit
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    # Méthode qui met à jour le potin à partir du contenu du formulaire de edit.html.erb, soumis par l'utilisateur
-    # pour info, le contenu de ce formulaire sera accessible dans le hash params
-    # Une fois la modification faite, on redirige généralement vers la méthode show (pour afficher le potin modifié)
+    @user = User.find(params[:id])
+    @user.update(user_params)
+
   end
 
   def destroy
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   private
   
-  def post_params
+  def user_params
     params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :city_id, :slug)
   end 
 end

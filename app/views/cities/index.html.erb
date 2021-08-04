@@ -1,0 +1,28 @@
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Hello, world!</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+  </div>
+</div>
+
+<h1>Gossips#index</h1>
+
+<h2 style="font-weight: lighter"> Voici la liste des Gossips THP</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <td> Nom de la ville </td>
+      <td> Actions </td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cities.each do |city|%>
+    <tr>
+      <td> <%= city.name %> </td>
+      <td> <a href="<%= city_path(city.id)%> " class="btn btn-primary"> Tous les potins de la ville </a> </td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>
+
