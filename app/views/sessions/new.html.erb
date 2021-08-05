@@ -1,0 +1,22 @@
+
+<body>
+
+    <h3> Page de connexion </h3>
+    <%= form_tag url_for(action: 'create'), method: "get" do %>
+
+    <%= label_tag 'Email' %>
+    <%= text_area_tag 'email', params[:email] %>
+    <br /> <br />
+
+    <%= label_tag 'Password' %>
+    <%= password_field_tag 'password',params[:password] %>
+    <br /> <br />
+
+    <%= submit_tag "Se connecter" %>
+
+  <% end %>
+</body>
+
+
+
+ 

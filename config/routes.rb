@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions_controllernew/create'
   get 'incription/index'
   get 'incription/show'
   get 'incription/new'
@@ -16,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :cities
+  resources :sessions, only: [:new, :create, :destroy]
 end
 
 

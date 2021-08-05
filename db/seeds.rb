@@ -11,7 +11,7 @@ end
 end 
 
 100.times do
-  new_gossip = Gossip.create(title: Faker::Fantasy::Tolkien.poem, content: Faker::Quote.yoda, user_id: User.all.sample.id)
+  new_gossip = Gossip.create(title: Faker::Fantasy::Tolkien.location, content: Faker::Quote.yoda, user_id: User.all.sample.id)
 end
 
 100.times do 

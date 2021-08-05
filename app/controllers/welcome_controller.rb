@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+  include SessionsHelper
   def print
     puts "$" * 60
     puts "Voici le message de l'URL :"

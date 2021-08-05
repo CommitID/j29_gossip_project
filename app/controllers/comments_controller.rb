@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[ show edit update destroy ]
+  include SessionsHelper
 
   # GET /comments or /comments.json
   def index

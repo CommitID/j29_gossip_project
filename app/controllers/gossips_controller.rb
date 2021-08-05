@@ -12,18 +12,25 @@ class GossipsController < ApplicationController
     @all_comments = Gossip.find(@num).comments
     
   end
-
+  
   def new
     # Méthode qui crée un potin vide et l'envoie à une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
-    @gossip = Gossip.new(user_id: 55)
+    @gossip = Gossip.new(user_id: 707)
+    #session[:user_id]
   end
+
+
 
   def create
     # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
     # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
     # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
-    @gossip = Gossip.new(title: params[:title], content: params[:body], user_id: 55) # avec xxx qui sont les données obtenues à partir du formulaire
+    @gossip = Gossip.new(title: params[:title], content: params[:body], user_id: 707) # avec xxx qui sont les données obtenues à partir du formulaire
+    session[:user_id]
+    
     puts @gossip
+
+
     if @gossip.save # essaie de sauvegarder en base @gossip
       # si ça marche, il redirige vers la page d'index du site
       flash[:notice] = "Bien joué "
