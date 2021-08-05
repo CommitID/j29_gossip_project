@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'incription/index'
+  get 'incription/show'
+  get 'incription/new'
+  get 'incription/create'
+  get 'incription/update'
+  get 'incription/edit'
+  get 'incription/destroy'
   get '/team', to: 'team#index'
   get '/contact', to: 'contact#index'
   get '/welcome/:name', to: 'welcome#print'

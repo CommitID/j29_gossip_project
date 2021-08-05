@@ -1,0 +1,33 @@
+
+<body>
+  <%= form_tag url_for(action: 'create'), method: "post" do %>
+
+    <%= label_tag 'first_name' %>
+    <%= text_field_tag 'First Name', @user.first_name %>
+    <br /> <br />
+
+    <%= label_tag 'last_name' %>
+    <%= text_area_tag 'Last Name', @user.last_name %>
+    <br /> <br />
+
+    <%= label_tag 'City' %>
+    <%= text_field_tag 'author', @user.city %>
+    <br /> <br />
+
+    <%= label_tag 'email' %>
+    <%= text_field_tag 'author', @user.email%>
+    <br /> <br />
+    
+    <%= label_tag 'password' %>
+    <%= password_field_tag 'password', @user.password %>
+    <br /> <br />
+
+    <%= label_tag 'password confirmation' %>
+    <%= password_field_tag 'password_confirmation', @user.password_confirmation%>
+    <br /> <br />
+
+    <%= submit_tag "Create Post" %>
+
+  <% end %>
+</body>
+
