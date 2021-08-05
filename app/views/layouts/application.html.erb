@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
   
@@ -9,9 +10,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
+<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
-  
   
   <header>
   
@@ -32,12 +35,24 @@
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:3000/gossips/new">Nouveau Gossip !</a>
           </li>
-          <li class="nav-item">
+          <%# Ajout du bouton dropdown %>
+<%# Bouton DROPDOWN qui ne s'ouvre pas  %>
+         <div class="dropdown show">
+          <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Inscription / Connexion
+          </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="http://localhost:3000/sessions/new"> Connexion </a>
+              <a class="dropdown-item" href="http://localhost:3000/users/new"> Inscription </a>
+            </div>
+          </div>
+
+        <%# <li class="nav-item">
             <a class="nav-link" href="http://localhost:3000/users/new"> Inscription </a>
           </li>
           <li class="nav-item">
           <a class="nav-link" href="http://localhost:3000/sessions/new"> Connexion </a>
-        </li>
+        </li> %>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -58,20 +73,14 @@
     </div>
   <% end %>
   
-
-
-
   <%= yield %>
 
   </header>
 
-
   <body>
 
-
-
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   </body>
 </html>
-
-

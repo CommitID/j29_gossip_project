@@ -4,6 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 gem 'faker'
 gem 'bcrypt'
+gem 'bootstrap-sass', '2.0.1'
+gem 'bootstrap-will_paginate', '0.0.5'
+gem 'devise'
+gem 'carrierwave'
+gem 'delayed_job_active_record'
+gem 'daemons'
+gem 'make_voteable'
+gem 'admin_data'
+gem 'indextank'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
