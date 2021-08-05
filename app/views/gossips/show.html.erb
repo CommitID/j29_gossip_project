@@ -12,14 +12,26 @@
     <p> <a href="<%= gossip_path(@gossip.id) %>" class="btn btn-danger" data-confirm="Sur ??" data-method="delete" >Supprimer</a>  </p>
   </div>
   <br /> <br />
-  <%= form_tag "/gossips/:gossip_id/comments",  method: "post" do %>
-  <%@gossip_id = @gossip.id%>
-    <%= label_tag 'Content' %>
-    <%= text_field_tag 'Content', @comment.content %>
-    <br /> <br />
-    <%= submit_tag "Create Comment" %>
+  
+  
+  
+  
+<%= form_with model:@comment, url:gossip_comments_path(@num), method: :post, local:true do |form| %>
+    <div class = "form-group">
+        <%= label_tag 'Rajoute un commentaire !' %>
+        <%= form.text_field :content, class:'form-control'%>
+    </div>
+    <%= form.submit "Publie ton commentaire" %>
+<%end%>
+<% @all_comments.sort.each_with_index do |comment|%>
+  <div class="card" style="width: 20rem;">
+    <%# <img class="card-img-top" src="..." alt="Card image cap"> %>
+    <div class="card-body">
+      <p class="card-text content"><%= comment.content%></p>
 
-  <% end %>
+      <div class="auteur">by <%= User.find(comment.user_id).first_name %></div>
+      <p> <a href="<%= edit_gossip_comment_path(comment.id) %>" class="btn btn-primary">Editer le commentaire</a>  </p>
 
-
-</body>
+    </div>
+  </div>
+    <% end %>

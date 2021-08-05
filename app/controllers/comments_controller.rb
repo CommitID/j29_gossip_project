@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1 or /comments/1.json
   def show
-    @comment = Comment.all
+    @comment = Comment.find(:params[:id])
   end
 
   # GET /comments/new
@@ -22,9 +22,15 @@ class CommentsController < ApplicationController
 
   # POST /comments or /comments.json
   def create
-    @comment = Comment.create(content: params[:Content], user_id: 12, gossip_id: @gossip_id )
-    puts @comment.content
-    #redirect_to "/gossips/#{params[:id]}"
+    @num = params[:gossip_id]
+    @comment = Comment.new(gossip_id:@num, user_id:1)
+    puts "$$$$$$$$$$$$$$$$$$$$$$$$$"
+    puts params[:comment]
+    puts params
+    puts "$$$$$$$$$$$$$$$$$$$$$$$$$"
+    @comment.content = params[:comment]
+    @comment.save
+    redirect_to gossip_path(@num)
   end
 
 

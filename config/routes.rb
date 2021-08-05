@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/', to: 'gossips#index'
 
   resources :gossips do
-    resources :comments, only: [:new, :create, :index, :destroy]
+    resources :comments, only: [:new, :create, :edit, :update, :index, :destroy]
   end
   resources :users
   resources :cities
